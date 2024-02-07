@@ -59,7 +59,7 @@
         shallow copy contructor - directly copy values
         deep copy construtor - allocate separate space on heap for dynamic memory
     move constructor
-    static members
+    static members : members shared by every object of same type
     friend functions
 
 
@@ -85,7 +85,7 @@
 #include "Account.h"
 using namespace std;
 
-
+/*
 int main() {
     string name;
     double balance;
@@ -138,31 +138,16 @@ int main() {
 
     } while (choice != 3);
 }
+*/
 
-/*
-void print_details(Account acc) {
-    acc.print_details();
-}
-
-Account getInstance(Account& acc) {
-    return acc;
-}
 
 int main() {
-    Account acc1("Hafsa", -200);
-    acc1.print_details();
+    Account acc1;
+    Account acc4;
+    Account acc3;
+    Account acc2;
 
-    Account acc2(acc1);
-    acc2.print_details();
-
-    print_details(acc1);
-
-    acc1.getInstance();
-
-    getInstance(acc2);
+    Account::print_active_accounts();
 
     return EXIT_SUCCESS;
 }
-
-
-*/

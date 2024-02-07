@@ -7,7 +7,10 @@ private:
     // attributes
     string name;
     double balance;
+    
 public:
+    static int objectCount; // declare
+    static void print_active_accounts(); // declare
     // constructors
     Account(string name = "NA", double balance = 0.00);
     // copy constructor

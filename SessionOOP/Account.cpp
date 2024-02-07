@@ -2,6 +2,24 @@
 #include <iostream>
 using namespace std;
 
+int Account::objectCount = 0; // define
+
+// constructors
+Account::Account(string name, double balance)
+    :name{ name }, balance{ (balance < 0) ? 0.00 : balance } {
+    ++objectCount;
+    //cout << "contructor called for  - " << name << endl;
+}
+
+// copy constructor
+Account::Account(Account& source) {
+    cout << "copy constructor called!" << endl;
+
+    this->name = source.name;
+    this->balance = source.balance;
+}
+
+
 Account::~Account() {}
 
 bool Account::widthdraw(const double& amount) {
@@ -48,17 +66,9 @@ void Account::set_balance(double balance) {
 }
 
 
-// constructors
-Account::Account(string name = "NA", double balance = 0.00)
-    :name{ name }, balance{ (balance < 0) ? 0.00 : balance } {
-    //cout << "contructor called for  - " << name << endl;
+void Account::print_active_accounts()
+{
+    cout << "Right now  " << objectCount << " accounts are active" << endl;
 }
 
-// copy constructor
-Account::Account(Account& source) {
-    cout << "copy constructor called!" << endl;
-
-    this->name = source.name;
-    this->balance = source.balance;
-}
 
