@@ -32,4 +32,6 @@ public:
 
     Account getInstance();
 
+    friend double taxCalculator(Account& acc);
+
 };

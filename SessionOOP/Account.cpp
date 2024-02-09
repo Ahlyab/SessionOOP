@@ -72,3 +72,8 @@ void Account::print_active_accounts()
 }
 
 
+double taxCalculator(Account &acc) {
+    return  acc.balance - (acc.balance * 0.1);
+}
+
+

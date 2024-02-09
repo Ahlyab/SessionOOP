@@ -142,12 +142,16 @@ int main() {
 
 
 int main() {
-    Account acc1;
+    /*Account acc1;
     Account acc4;
     Account acc3;
     Account acc2;
 
-    Account::print_active_accounts();
+    Account::print_active_accounts();*/
+
+    Account acc("Tayl", 2000);
+
+    cout << "balance after tax : " <<  taxCalculator(acc) << endl;
 
     return EXIT_SUCCESS;
 }
