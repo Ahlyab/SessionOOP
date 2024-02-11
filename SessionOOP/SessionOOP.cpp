@@ -141,6 +141,10 @@ int main() {
 */
 
 
+inline double cube(double x) {
+    return x * x * x;
+}
+
 int main() {
     /*Account acc1;
     Account acc4;
@@ -149,9 +153,12 @@ int main() {
 
     Account::print_active_accounts();*/
 
-    Account acc("Tayl", 2000);
+    /*Account acc("Tayl", 2000);
 
-    cout << "balance after tax : " <<  taxCalculator(acc) << endl;
+    cout << "balance after tax : " <<  taxCalculator(acc) << endl;*/
+
+
+    cout << "cube : " << cube(5) << endl;
 
     return EXIT_SUCCESS;
 }
