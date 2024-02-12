@@ -83,6 +83,7 @@
 #include <iostream>
 #include <string>
 #include "Account.h"
+#include "SavingAccount.h"
 using namespace std;
 
 /*
@@ -141,24 +142,13 @@ int main() {
 */
 
 
-inline double cube(double x) {
-    return x * x * x;
-}
 
 int main() {
-    /*Account acc1;
-    Account acc4;
-    Account acc3;
-    Account acc2;
+    SavingAccount acc("Tayl", 2000);
 
-    Account::print_active_accounts();*/
+    acc.deposit(1000);
 
-    /*Account acc("Tayl", 2000);
-
-    cout << "balance after tax : " <<  taxCalculator(acc) << endl;*/
-
-
-    cout << "cube : " << cube(5) << endl;
+    acc.print_details();
 
     return EXIT_SUCCESS;
 }
