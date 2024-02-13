@@ -62,7 +62,12 @@
     static members : members shared by every object of same type
     friend functions
 
-
+----------------------------------------------
+Inheritance -> basic
+how to derive a class
+how to do constructor chaining
+calling parent class function in child class while overidding 
+DRY principle
 
 
 */
@@ -84,6 +89,7 @@
 #include <string>
 #include "Account.h"
 #include "SavingAccount.h"
+#include "CheckingAccount.h"
 using namespace std;
 
 /*
@@ -144,10 +150,12 @@ int main() {
 
 
 int main() {
-    SavingAccount acc("Tayl", 2000);
+    CheckingAccount acc("Tayl", 2000);
 
     acc.deposit(1000);
-
+    acc.print_details();
+    
+    acc.widthdraw(920);
     acc.print_details();
 
     return EXIT_SUCCESS;
