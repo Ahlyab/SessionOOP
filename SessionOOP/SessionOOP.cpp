@@ -163,6 +163,6 @@ int main() {
 }
 
 /*
-program interface
+program interface, utility class
 multi inheritance
 */
