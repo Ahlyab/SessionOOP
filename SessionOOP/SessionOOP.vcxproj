@@ -131,11 +131,13 @@
     <ClCompile Include="CheckingAccount.cpp" />
     <ClCompile Include="SavingAccount.cpp" />
     <ClCompile Include="SessionOOP.cpp" />
+    <ClCompile Include="TrustAccount.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Account.h" />
     <ClInclude Include="CheckingAccount.h" />
     <ClInclude Include="SavingAccount.h" />
+    <ClInclude Include="TrustAccount.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

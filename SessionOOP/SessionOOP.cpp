@@ -90,6 +90,7 @@ DRY principle
 #include "Account.h"
 #include "SavingAccount.h"
 #include "CheckingAccount.h"
+#include "TrustAccount.h"
 using namespace std;
 
 /*
@@ -150,13 +151,18 @@ int main() {
 
 
 int main() {
-    CheckingAccount acc("Tayl", 2000);
+    TrustAccount acc("Tayl", 2000);
 
-    acc.deposit(1000);
+    acc.deposit(50000);
     acc.print_details();
     
-    acc.widthdraw(920);
+    acc.widthdraw(19000);
     acc.print_details();
 
     return EXIT_SUCCESS;
 }
+
+/*
+program interface
+multi inheritance
+*/
