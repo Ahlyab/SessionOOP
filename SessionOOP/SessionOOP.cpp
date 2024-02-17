@@ -87,80 +87,40 @@ DRY principle
 */
 #include <iostream>
 #include <string>
-#include "Account.h"
-#include "SavingAccount.h"
-#include "CheckingAccount.h"
-#include "TrustAccount.h"
+#include "AccountUtility.h"
 using namespace std;
 
-/*
+
 int main() {
     string name;
     double balance;
+    Account* account = nullptr;
 
-    cout << "Enter account holder name : ";
-    getline(cin, name);
+    AccountUtility accountUtility;
 
-    cout << "Enter your initial account Balance : ";
-    cin >> balance;
-
-    Account account(name, balance);
-
-    int choice = 0;
-
-    do {
-        cout << "Select operation" << endl;
-        cout << "1. Withdraw" << endl;
-        cout << "2. Deposit" << endl;
-        cout << "3. Exit \n>>  ";
-        cin >> choice;
-
-        switch (choice) {
-            case 1:
-                cout << "Enter your amount : ";
-                cin >> balance;
-
-                if (account.widthdraw(balance)) {
-                    cout << "Successfully withdrawn  - current balance : " << account.get_balance() << endl;
-                }
-                else {
-                    cout << "Failed to  withdraw  - current balance : " << account.get_balance() << endl;
-                }
-                break;
-            case 2:
-                cout << "Enter your amount : ";
-                cin >> balance;
-
-                if (account.deposit(balance)) {
-                    cout << "Successfully deposited  - current balance : " << account.get_balance() << endl;
-                }
-                else {
-                    cout << "Failed to  deposit  - current balance : " << account.get_balance() << endl;
-                }
-                break;
-            case 3: break;
-            default :
-                cout << "Invalid choice!" << endl;
-
-        }
-
-    } while (choice != 3);
-}
-*/
-
-
-
-int main() {
-    TrustAccount acc("Tayl", 2000);
-
-    acc.deposit(50000);
-    acc.print_details();
+    int choice = accountUtility.displayAccountCreationOptions();
+    if (choice != -1) {
+        accountUtility.takeUserInputForAccountCreation(name, balance);
+        account = accountUtility.getChoosenAccount(name, balance, choice);
+    }
+    else {
+        cout << "InValid Choice!" << endl;
+        return EXIT_SUCCESS;
+    }
     
-    acc.widthdraw(19000);
-    acc.print_details();
+    if (account != nullptr) {
+        do {
+            choice = accountUtility.displayAccountActions();
+            accountUtility.processAction(account, choice);
 
-    return EXIT_SUCCESS;
+        } while (choice != 3);
+    }
+
+    delete account;
+    
 }
+
+
 
 /*
 program interface, utility class

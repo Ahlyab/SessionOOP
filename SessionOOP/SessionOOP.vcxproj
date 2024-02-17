@@ -128,6 +128,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Account.cpp" />
+    <ClCompile Include="AccountUtility.cpp" />
     <ClCompile Include="CheckingAccount.cpp" />
     <ClCompile Include="SavingAccount.cpp" />
     <ClCompile Include="SessionOOP.cpp" />
@@ -135,6 +136,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Account.h" />
+    <ClInclude Include="AccountUtility.h" />
     <ClInclude Include="CheckingAccount.h" />
     <ClInclude Include="SavingAccount.h" />
     <ClInclude Include="TrustAccount.h" />
