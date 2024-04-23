@@ -18,20 +18,25 @@ public:
     // getter methods
     string get_name();
     double get_balance();
+
     // setter methods
     void set_name(string name);
     void set_balance(double balance);
 
     void print_details();
 
-    bool deposit(const double& amount);
+    virtual bool deposit(const double& amount);
 
-    bool widthdraw(const double& amount);
+    virtual bool widthdraw(const double& amount);
 
     ~Account();
 
     Account getInstance();
 
     friend double taxCalculator(Account& acc);
+
+    // operator overloading
+    friend ostream &operator<<(ostream &os, const Account& obj);
+    friend istream &operator>>(istream &is, Account& obj);
 
 };

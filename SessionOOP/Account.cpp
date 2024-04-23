@@ -19,7 +19,6 @@ Account::Account(Account& source) {
     this->balance = source.balance;
 }
 
-
 Account::~Account() {}
 
 bool Account::widthdraw(const double& amount) {
@@ -33,6 +32,8 @@ bool Account::widthdraw(const double& amount) {
 Account Account::getInstance() {
     return *this;
 }
+
+
 
 bool Account::deposit(const double& amount) {
     if (amount < 0) {
@@ -76,4 +77,16 @@ double taxCalculator(Account &acc) {
     return  acc.balance - (acc.balance * 0.1);
 }
 
+ostream& operator<<(ostream& os, const Account& obj)
+{
+    os << "Name : " << obj.name << "\n" << "Balance : " << obj.balance << endl;
+    return os;
+}
 
+
+istream& operator>>(istream& is, Account& obj) {
+    is >> obj.name >> obj.balance;
+    return is;
+}
+
+// Todo: you have to overload + operator such that both account names are concatenated and balance is sumed up

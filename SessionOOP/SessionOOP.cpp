@@ -85,6 +85,7 @@ DRY principle
         3. Inheritance
         4. Polymorphism
 */
+
 #include <iostream>
 #include <string>
 #include "AccountUtility.h"
@@ -92,6 +93,7 @@ using namespace std;
 
 
 int main() {
+    
     string name;
     double balance;
     Account* account = nullptr;
@@ -123,6 +125,9 @@ int main() {
 
 
 /*
-program interface, utility class
-multi inheritance
+operator overloading
+polymorphism
+abstract classes
+dervided class to base class pointer
+
 */
